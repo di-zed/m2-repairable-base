@@ -1,0 +1,20 @@
+{
+    "name": "dized/module-repairable-base",
+    "description": "Repairable Base module (by DiZed Team) for the Magento 2 project",
+    "version": "1.0.0",
+    "type": "magento2-module",
+    "homepage": "https://github.com/di-zed/m2-repairable-base",
+    "license": "MIT",
+    "require": {
+        "dized/repairable-client-php": "^1.0.0",
+        "dized/module-core": "^1.0.0"
+    },
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "DiZed\\RepairableBase\\": ""
+        }
+    }
+}

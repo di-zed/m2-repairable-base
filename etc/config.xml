@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author DiZed Team
+ * @copyright Copyright (c) DiZed Team (https://github.com/di-zed/)
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <dized_repairable_base>
+            <general>
+                <enabled>0</enabled>
+                <api_public_key></api_public_key>
+                <api_private_key></api_private_key>
+            </general>
+        </dized_repairable_base>
+    </default>
+</config>

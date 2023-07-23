@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author DiZed Team
+ * @copyright Copyright (c) DiZed Team (https://github.com/di-zed/)
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <!-- Add custom logger: -->
+    <virtualType name="repairableLogger" type="Magento\Framework\Logger\Monolog">
+        <arguments>
+            <argument name="handlers"  xsi:type="array">
+                <item name="debug" xsi:type="object">DiZed\RepairableBase\Logger\Handler\Debug</item>
+                <item name="error" xsi:type="object">DiZed\RepairableBase\Logger\Handler\Error</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="repairableLoggerContext" type="Magento\Framework\App\Helper\Context">
+        <arguments>
+            <argument name="logger" xsi:type="object">repairableLogger</argument>
+        </arguments>
+    </virtualType>
+    <type name="Convert\RepairableBase\Helper\Data">
+        <arguments>
+            <argument name="context" xsi:type="object">repairableLoggerContext</argument>
+        </arguments>
+    </type>
+</config>
