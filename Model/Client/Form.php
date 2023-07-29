@@ -54,7 +54,7 @@ class Form
     protected function initClient(): ?FormClient
     {
         if (!$this->client) {
-            if ($publicKey = $this->helper->getApiPublicKey()) {
+            if (!$publicKey = $this->helper->getApiPublicKey()) {
                 $this->helper->getLogger()->error('Public Key is undefined.');
                 $this->client = null;
                 return null;

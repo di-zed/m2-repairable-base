@@ -1,10 +1,17 @@
 {
     "name": "dized/module-repairable-base",
-    "description": "Repairable Base module (by DiZed Team) for the Magento 2 project",
+    "description": "Repairable Base module for the Magento 2 project",
     "version": "1.0.0",
+    "keywords": ["dized", "repairable", "module", "magento"],
     "type": "magento2-module",
-    "homepage": "https://github.com/di-zed/m2-repairable-base",
     "license": "MIT",
+    "homepage": "https://github.com/di-zed/m2-repairable-base",
+    "authors": [
+        {
+            "name": "DiZed Team",
+            "email": "d1ma.7.zed@gmail.com"
+        }
+    ],
     "require": {
         "dized/repairable-client-php": "^1.0.0",
         "dized/module-core": "^1.0.0"

@@ -31,9 +31,9 @@ class Widget extends Template
     protected Data $helper;
 
     /**
-     * @var string
+     * @var string|null
      */
-    private string $formHtml = '';
+    private ?string $formHtml = null;
 
     /**
      * Block constructor.
@@ -55,16 +55,23 @@ class Widget extends Template
         $this->helper = $helper;
     }
 
-    public function getFormHtml()
+    /**
+     * Get form HTML code.
+     *
+     * @return string
+     */
+    public function getFormHtml(): string
     {
-        if (!$this->formHtml) {
-            if ($client = $this->client->getClient()) {
-
-
-                // @todo logger
-
-
-                $this->formHtml = $client->getFormHtml();
+        if ($this->formHtml === null) {
+            try {
+                if ($client = $this->client->getClient()) {
+                    $this->formHtml = $client->getFormHtml();
+                } else {
+                    $this->formHtml = '';
+                }
+            } catch (\Exception $e) {
+                $this->formHtml = '';
+                $this->helper->getLogger()->error($e->getMessage());
             }
         }
 

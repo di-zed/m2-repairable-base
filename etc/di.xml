@@ -21,7 +21,7 @@
             <argument name="logger" xsi:type="object">repairableLogger</argument>
         </arguments>
     </virtualType>
-    <type name="Convert\RepairableBase\Helper\Data">
+    <type name="DiZed\RepairableBase\Helper\Data">
         <arguments>
             <argument name="context" xsi:type="object">repairableLoggerContext</argument>
         </arguments>
